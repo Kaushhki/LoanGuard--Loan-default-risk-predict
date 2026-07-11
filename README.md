@@ -4,7 +4,7 @@ An end-to-end credit-risk classification pipeline: applicant data → EDA →
 feature engineering → model comparison (Logistic Regression vs Random
 Forest) → a risk-scoring framework and interactive scoring dashboard.
 
-**[Live Dashboard →](#deployment)** *(add your Streamlit Cloud link here after deploying)*
+**[Live Dashboard →](#deployment)** (https://loangaurd--loan-default-risk-predict.streamlit.app/)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![scikit--learn](https://img.shields.io/badge/scikit--learn-ML-orange)
