@@ -1,0 +1,15 @@
+bucket,indicator,default_rate,applicant_count
+Low (<20%),debt_to_income_ratio,0.13182124410509768,4453
+Moderate (20-35%),debt_to_income_ratio,0.17725387469984719,4581
+High (35-50%),debt_to_income_ratio,0.2508376144739781,4477
+Very High (>50%),debt_to_income_ratio,0.25721961047683006,1489
+Low (<30%),credit_utilization_pct,0.12402063825721384,5233
+Moderate (30-60%),credit_utilization_pct,0.19753777280358142,7148
+High (>60%),credit_utilization_pct,0.3222604047346315,2619
+0,num_late_payments_last_year,0.1402701499183613,6737
+1,num_late_payments_last_year,0.1952750092284976,5418
+2,num_late_payments_last_year,0.2874418604651163,2150
+3,num_late_payments_last_year,0.3856088560885609,542
+4,num_late_payments_last_year,0.4701492537313433,134
+5,num_late_payments_last_year,0.5882352941176471,17
+6,num_late_payments_last_year,1.0,2

@@ -1,0 +1,6 @@
+risk_band,applicant_count,avg_risk_score,actual_default_rate
+Very High Risk,1216,513.411,0.317
+High Risk,1080,661.035,0.139
+Moderate Risk,614,758.339,0.068
+Low Risk,89,829.888,0.034
+Very Low Risk,1,873.0,0.0

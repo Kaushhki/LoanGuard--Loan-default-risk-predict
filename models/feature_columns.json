@@ -1,0 +1,53 @@
+{
+  "feature_cols": [
+    "age",
+    "employment_years",
+    "annual_income",
+    "credit_history_length_years",
+    "num_late_payments_last_year",
+    "credit_utilization_pct",
+    "num_existing_loans",
+    "num_credit_inquiries_last_6m",
+    "loan_amount",
+    "loan_term_months",
+    "monthly_debt_obligations",
+    "debt_to_income_ratio",
+    "loan_to_income_ratio",
+    "estimated_monthly_installment",
+    "high_risk_flag",
+    "marital_status_Married",
+    "marital_status_Single",
+    "education_High School",
+    "education_Post Graduate",
+    "employment_type_Salaried",
+    "employment_type_Self-Employed",
+    "loan_purpose_Business",
+    "loan_purpose_Education",
+    "loan_purpose_Home Improvement",
+    "loan_purpose_Medical",
+    "loan_purpose_Personal"
+  ],
+  "numeric_cols": [
+    "age",
+    "employment_years",
+    "annual_income",
+    "credit_history_length_years",
+    "num_late_payments_last_year",
+    "credit_utilization_pct",
+    "num_existing_loans",
+    "num_credit_inquiries_last_6m",
+    "loan_amount",
+    "loan_term_months",
+    "monthly_debt_obligations",
+    "debt_to_income_ratio",
+    "loan_to_income_ratio",
+    "estimated_monthly_installment",
+    "high_risk_flag"
+  ],
+  "categorical_cols": [
+    "marital_status",
+    "education",
+    "employment_type",
+    "loan_purpose"
+  ]
+}
