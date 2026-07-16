@@ -1,18 +1,5 @@
-"""
-generate_data.py
------------------
-Generates a synthetic loan applicant dataset with demographic, income,
-and credit-history features, and a binary default label. The default
-probability is a function of realistic risk drivers (credit utilization,
-repayment history, debt-to-income ratio, credit history length) plus
-noise -- so the signal is learnable but not trivial, mirroring a real
-underwriting dataset.
 
-Run:
-    python src/generate_data.py
-Outputs:
-    data/loan_applicants_raw.csv
-"""
+
 
 import numpy as np
 import pandas as pd
@@ -57,9 +44,8 @@ def main():
     num_existing_loans = np.random.poisson(1.2, N)
     num_credit_inquiries_last_6m = np.random.poisson(1.0, N)
 
-    # ---------------- default probability model ----------------
-    # Higher risk: high DTI, high utilization, late payments, short
-    # credit history, more inquiries, lower income, self-employed.
+   
+
     z = (
         -4.1
         + 2.6 * debt_to_income_ratio
@@ -97,18 +83,18 @@ def main():
         "default": default,
     })
 
-    # ---------------- inject realistic messiness ----------------
-    # Missing values
+   
+
     for col, frac in [("employment_years", 0.02), ("credit_utilization_pct", 0.015),
                        ("annual_income", 0.01), ("credit_history_length_years", 0.01)]:
         idx = df.sample(frac=frac, random_state=1).index
         df.loc[idx, col] = np.nan
 
-    # Duplicates
+    
     dupes = df.sample(60, random_state=2)
     df = pd.concat([df, dupes], ignore_index=True)
 
-    # A few outliers / data entry errors
+   
     err_idx = df.sample(10, random_state=3).index
     df.loc[err_idx, "age"] = np.random.choice([-5, 150, 999], size=len(err_idx))
 
