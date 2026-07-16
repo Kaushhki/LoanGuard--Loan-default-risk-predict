@@ -1,19 +1,5 @@
-"""
-risk_scoring.py
------------------
-Translates raw model default probabilities into a risk-scoring
-framework usable by a lending team: a 300-900 risk score (familiar,
-credit-bureau-style scale, inverted so higher = safer) and a risk band
-with a recommended action. This is the layer that turns "the model
-says 34% probability of default" into something a loan officer can
-actually act on.
 
-Run:
-    python src/risk_scoring.py
-Outputs:
-    data/scored_applicants.csv
-    models/risk_band_summary.csv
-"""
+
 
 import json
 import joblib
