@@ -1,17 +1,4 @@
-"""
-feature_engineering.py
-------------------------
-Prepares the modeling dataset: encodes categoricals, engineers a couple
-of derived risk features, and splits into train/test sets. Saves the
-fitted preprocessing pipeline so it can be reused by the dashboard for
-scoring new applicants.
 
-Run:
-    python src/feature_engineering.py
-Outputs:
-    data/X_train.csv, data/X_test.csv, data/y_train.csv, data/y_test.csv
-    models/feature_columns.json
-"""
 
 import json
 import pandas as pd
@@ -29,11 +16,11 @@ NUMERIC_COLS = [
 
 def engineer_features(df):
     df = df.copy()
-    # Derived feature: loan amount relative to annual income (leverage)
+    
     df["loan_to_income_ratio"] = (df["loan_amount"] / df["annual_income"]).round(3)
-    # Derived feature: estimated monthly installment burden
+  
     df["estimated_monthly_installment"] = (df["loan_amount"] / df["loan_term_months"]).round(0)
-    # Derived feature: composite payment stress flag
+    
     df["high_risk_flag"] = (
         (df["debt_to_income_ratio"] > 0.5)
         | (df["credit_utilization_pct"] > 75)
