@@ -1,17 +1,5 @@
-"""
-dashboard.py
-------------
-Interactive loan default risk scoring dashboard. Two views:
-  1. Score a new applicant — enter demographic/income/credit details,
-     get a default probability, 300-900 risk score, risk band, and
-     recommended lending action.
-  2. Model performance — compare Logistic Regression vs Random Forest
-     on accuracy, precision, recall, F1, and AUC-ROC, with ROC curve
-     and feature importance visualizations.
 
-Run:
-    streamlit run dashboard.py
-"""
+
 
 import json
 import os
@@ -56,7 +44,7 @@ st.caption(
 
 tab1, tab2 = st.tabs(["🔍 Score an Applicant", "📈 Model Performance"])
 
-# ============================================================ TAB 1 =====
+
 with tab1:
     st.subheader("Applicant Details")
     c1, c2, c3 = st.columns(3)
@@ -105,7 +93,7 @@ with tab1:
 
         engineered = engineer_features(raw)
         encoded = pd.get_dummies(engineered, columns=CATEGORICAL_COLS, drop_first=True)
-        # Align to training columns (fill any missing dummy cols with 0)
+        
         for c in feature_cols:
             if c not in encoded.columns:
                 encoded[c] = 0
@@ -147,7 +135,7 @@ with tab1:
         st.plotly_chart(fig, use_container_width=True)
         st.caption(f"Scored using {best_model_name} (selected as best model by AUC-ROC).")
 
-# ============================================================ TAB 2 =====
+
 with tab2:
     st.subheader("Logistic Regression vs Random Forest")
     st.dataframe(comparison.set_index("model").style.format("{:.4f}"), use_container_width=True)
