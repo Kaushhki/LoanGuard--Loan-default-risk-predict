@@ -144,8 +144,8 @@ raw probability.
 ## Running locally
 
 ```bash
-git clone https://github.com/<your-username>/loan-default-risk.git
-cd loan-default-risk
+git clone https://github.com/Kaushhki/LoanGuard--Loan-default-risk-predict.git
+cd LoanGuard--Loan-default-risk-predict
 pip install -r requirements.txt
 
 # Optional — regenerate everything from scratch (raw/clean data, trained
